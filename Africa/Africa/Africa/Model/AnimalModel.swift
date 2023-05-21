@@ -7,13 +7,16 @@
 
 import Foundation
 
-struct Animal: Codable, Identifiable{
-    let id: String
+struct Response: Codable {
+    let animals: [Animal]
+}
+
+struct Animal: Codable {
     let name: String
+    let image: String
     let headline: String
     let description: String
     let link: String
-    let image: String
     let gallery: [String]
     let fact: [String]
 }
