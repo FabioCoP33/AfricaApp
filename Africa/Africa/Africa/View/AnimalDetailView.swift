@@ -56,7 +56,12 @@ struct AnimalDetailView: View {
         .onAppear {
                     fetchData()
                 }
-        
+        // MARK: METHODS
+            func fetchData() {
+                guard let url = URL(string: "https://my-end-point.free.beeceptor.com/animals") else {
+                    print("Invalid URL")
+                    return
+                }
         
     }
 }
