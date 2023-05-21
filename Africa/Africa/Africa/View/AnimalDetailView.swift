@@ -53,6 +53,9 @@ struct AnimalDetailView: View {
             }//:VSTACk
             .navigationBarTitle("Learn about \(animal.name)", displayMode: .inline)
         }//:SCROll
+        .onAppear {
+                    fetchData()
+                }
         
         
     }
