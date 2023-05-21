@@ -64,6 +64,22 @@ struct AnimalDetailView: View {
                 print("Invalid URL")
                 return
             }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+                       if let error = error {
+                           print("Error: \(error.localizedDescription)")
+                           return
+                       }
+
+                       if let data = data {
+                           do {
+                               let decodedData = try JSONDecoder().decode(Response.self, from: data)
+                               // Hacer algo con los datos decodificados
+                           } catch {
+                               print("Error decoding data: \(error.localizedDescription)")
+                           }
+                       }
+                   }.resume()
+               }
 }
 //Mark: PREVIEW
 struct AnimalDetailView_Previews: PreviewProvider {
